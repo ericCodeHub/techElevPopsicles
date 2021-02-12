@@ -1,0 +1,212 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #87CEEB;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "header nav"
+    "image-info image-info"
+    "race refresh"
+    "footer footer";
+    grid-gap: 10px;    
+}
+
+
+nav {
+    grid-area: nav;
+     
+}
+nav ul {
+    margin: 0;
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    list-style: none;
+    width: 30%;
+    
+    background-color: #00afef;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+}
+header {
+    display: flex;
+    grid-area: header;
+}
+header img{
+    height: 100px;
+    width: auto;
+}
+header h1 {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+main {
+    grid-area: image-info;
+    display: flex;
+
+}
+
+main div ul {
+    list-style: none;
+  
+}
+main img {
+    object-fit: cover;
+    margin-right: 20px;
+    height: auto;
+    max-width: 35%;    
+}
+
+section#pop-race-section {
+    grid-area: race;  
+    display: grid;
+    
+    grid-template-columns: 25% 75%;
+    grid-template-areas: 
+    "blue-pop race-title"
+    "blue-pop race-info";
+}
+section #blue-pop {
+    grid-area: blue-pop;
+    
+}
+main li:before {
+    content: '🍡';
+    margin-left: -31px;
+    padding-right: 8px;
+}
+
+main, section, footer {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+}
+div.info {
+    padding: 10% 0;
+}
+
+div.refresh {
+    grid-area: refresh;
+}
+footer {
+
+    grid-area: footer;
+    max-width: 100%;
+    padding: 0 10px;
+    border-radius: 5px;
+    
+}
+
+a {
+ text-decoration: none;
+ color: black;
+ font-weight: bold;
+ text-transform: uppercase;
+}
+
+div.refresh > h2 {
+    text-align: center;
+}
+
+
+div.race > h2 {
+    grid-area: race-title;
+    text-align: center;
+}
+div.race > p {
+    grid-area: race-info;
+    padding: 20px 0;
+}
+.store-button { /* used for store link in "Get refreshed" section */
+    width: 25%;
+    padding: 10px 35px 10px 35px;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #00afef;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 35%;
+}
+/*styles for contact-us page*/
+.contact-form {
+    grid-area: image-info; 
+    flex-direction: column;   
+}
+form div {
+    padding: 10px;    
+}
+form .input {
+    width: 30%;
+}
+
+#submit {
+    width: 25%;
+    padding: 10px 35px 10px 35px;
+    border-radius: 5px;
+    color: white;
+    background-color: #00afef;
+    font-weight: bold;  
+}
+
+@media screen and (max-width:800px){
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #87CEEB;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header" 
+        "nav"
+        "image-info"
+        "race"
+        "refresh"
+        "footer" ;
+        grid-gap: 10px;        
+    }
+
+    main {
+        grid-area: image-info;
+        display: flex;
+        flex-direction: column;
+        
+    
+    }
+
+    main img {
+        max-width: 100%;
+        justify-content: center;
+        padding: 10px;
+    }
+
+
+    section#pop-race-section {
+        grid-area: race;  
+        display: grid;
+        
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "blue-pop race-title"       
+        "race-info race-info";
+    }
+
+    section #blue-pop {
+        grid-area: blue-pop;
+        max-height: 50%;
+        
+    }
+
+    div.race > h2 {
+        grid-area: race-title;
+        text-align: center;
+    }
+
+    div.race > p {
+        grid-area: race-info;
+        padding: 20px 0;
+
+}
